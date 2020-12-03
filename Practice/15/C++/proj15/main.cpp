@@ -5,11 +5,7 @@ using namespace std;
 
 int n, d, v, i;
 int main() {
-    setlocale(LC_ALL, "Russian");
-    n = 2;
     while (d != 2) {
-        //srand(time(0));
-        //n = 1 + rand() % 100;
         cout << "хотите сыграть?\n1 - играть\n2 - закрыть приложение\n";
         cin >> d;
         switch (d) {

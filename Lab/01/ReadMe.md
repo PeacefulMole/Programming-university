@@ -230,9 +230,10 @@ int main() {
 }
 ```
  <br>
- 5) Далее написал клиентское приложение на языке Python<br>
- ```python
- from tkinter import Tk
+ 5) Далее написал клиентское приложение на языке Python
+ 
+```python
+from tkinter import Tk
 from tkinter import Frame
 from tkinter import TOP
 from tkinter import X

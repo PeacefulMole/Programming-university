@@ -1,6 +1,6 @@
-﻿#include <iostream>
-#include <cpp_httplib/httplib.h>
-#include <nlohmann/json.hpp>
+#include <iostream>
+#include <Main/include/cpp_httplib/httplib.h>
+#include <Main/include/nlohmann/json.hpp>
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -81,25 +81,25 @@ void gen_response(const Request& req, Response& res) {
     // Команда set_content задаёт ответ сервера и тип ответа:
     // Hello, World! - тело ответа
     // text/plain - MIME тип ответа (в данном случае обычный текст)
-    
-    string template_file_name = "Погода сейчас.html";
+
+    string template_file_name = "wether.html";
     ifstream file(template_file_name);
-    if (!file.is_open()) { cout << "Неудалось открыть файл\n"; }
+    if (!file.is_open()) { cout << "Не удалось открыть файл\n"; }
     else { cout << "Файл открыт!\n"; }
     string str;                 // Буфер. Тут будет текст файла
     getline(file, str, '\0');   // Читаем все пока не встретим символ '\0'
-   
+
     file.close();
-    
+
     Replacement(str, "{hourly[i].weather[0].description}", CurrentWeather);
-    
-    Replacement(str, "{hourly[i].weather[0].icon}", Picture);      
-    
+
+    Replacement(str, "{hourly[i].weather[0].icon}", Picture);
+
     Replacement(str, "{hourly[i].temp}", std::to_string(int(std::round(Temp))));
-    
-   
+
+
         res.set_content(str, "text/html;charset=utf-8");
-    
+
 }
 
 
@@ -160,12 +160,12 @@ void gen_response_raw(const Request& req, Response& res) {
          res.set_content(out.dump(), "text/json;charset=utf-8");
 
     }
-  
- 
+
+
 int main() {
     Server svr;                    // Создаём сервер (пока-что не запущен)
     svr.Get("/", gen_response); // Вызвать функцию gen_response если кто-то обратиться к корню "сайта"
     svr.Get("/raw", gen_response_raw);// Вызвать функцию gen_response_raw если кто-то обратиться к сырому кэшу сайта
     std::cout << "Start server... OK\n";
-    svr.listen("localhost", 3000); 
+    svr.listen("localhost", 3000);
 }

@@ -8,9 +8,9 @@
 #include <string> // string
 #include <cmath> // isnan, isinf
 
-#include <nlohmann/detail/input/binary_reader.hpp>
-#include <nlohmann/detail/macro_scope.hpp>
-#include <nlohmann/detail/output/output_adapters.hpp>
+#include <Main/include/nlohmann/detail/input/binary_reader.hpp>
+#include <Main/include/nlohmann/detail/macro_scope.hpp>
+#include <Main/include/nlohmann/detail/output/output_adapters.hpp>
 
 namespace nlohmann
 {

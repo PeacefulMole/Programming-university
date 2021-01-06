@@ -287,6 +287,6 @@ root.mainloop()
 ```
  <br>
  6) Был сделан графический интерфейс приложения<br>
- ![](./images/pic1.png)<br>
+ ![](./images/pic2.png)<br>
  7) А вот и готовый вариант задачи<br>
- ![](./images/pic1.png)<br>
+ ![](./images/pic3.png)<br>

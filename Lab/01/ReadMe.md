@@ -51,7 +51,7 @@
 <h2>Выполнение работы</h2>
  <br>1) Был сгенерирован API key на сайте https://openweathermap.org/ - 3d39302576a79c67051688878116f7c4<br>
  2) Далее был сделан базовый клиент сервера, который в дальнейшем будет редактироваться.<br>
- ![](https://github.com/PeacefulMole/Programming/blob/master/Lab/01/images/pic0)<br>
+ ![](PeacefulMole/Programming/blob/master/Lab/01/images/pic0)<br>
  3) Изучили пример ответа от сайта worldtimeapi<br>
  ![](./images/pic1.png)<br>
  4) Написали серверное приложение на языке C++

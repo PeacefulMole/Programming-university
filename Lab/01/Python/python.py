@@ -11,7 +11,7 @@ import requests
 
 def reload_data(event=None):
     try:
-        response = requests.get('https://7556ddbfe5be.ngrok.io/raw').content.decode("utf8")
+        response = requests.get('https://95c9ac0c336e.ngrok.io/raw').content.decode("utf8")
         forecast_j = json.loads(response)
 
         desc.config(text=str(forecast_j["weather"]))

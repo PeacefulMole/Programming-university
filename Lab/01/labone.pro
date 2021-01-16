@@ -4,8 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    Client/Client.cpp \
-    Main/Main/Main.cpp
+    Main/Main/Main.cpp \
 
 DISTFILES += \
     Main/Main/Погода сейчас.html \
@@ -53,5 +52,5 @@ HEADERS += \
     Main/include/nlohmann/thirdparty/hedley/hedley.hpp \
     Main/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
 
-QMAKE_CXXFLAGS += -std=c++20 -pthread
+QMAKE_CXXFLAGS += -std=c++17 -pthread
 LIBS += -pthread

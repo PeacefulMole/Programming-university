@@ -47,7 +47,7 @@ void gen_response(const Request& req, Response& res) {
 
     Client cli2("http://api.openweathermap.org");
     // Отправляем get-запрос и ждём ответ, который сохраняется в переменной res
-    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=3d39302576a79c67051688878116f7c4&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
+    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=b1c53fb5c5c8568523e672a58733c718&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
     // res преобразуется в true, если запрос-ответ прошли без ошибок
     if (res2) {
         // Проверяем статус ответа, т.к. может быть 404 и другие
@@ -132,7 +132,7 @@ void gen_response_raw(const Request& req, Response& res) {
 
     Client cli2("http://api.openweathermap.org");
     // Отправляем get-запрос и ждём ответ, который сохраняется в переменной res
-    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=3d39302576a79c67051688878116f7c4&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
+    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=b1c53fb5c5c8568523e672a58733c718&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
     // res преобразуется в true, если запрос-ответ прошли без ошибок
     if (res2) {
         // Проверяем статус ответа, т.к. может быть 404 и другие

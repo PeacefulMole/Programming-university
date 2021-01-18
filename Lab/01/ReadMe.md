@@ -1,12 +1,12 @@
-<p align="center">МИНИСТЕРСТВО НАУКИ  И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ<br>
+﻿<p align="center">МИНИСТЕРСТВО НАУКИ  И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ<br>
 
-Федеральное государственное автономное образовательное учреждение высшего образования<br>
+<p align="center">Федеральное государственное автономное образовательное учреждение высшего образования<br>
 
-"КРЫМСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ им. В. И. ВЕРНАДСКОГО"<br>
+<p align="center">"КРЫМСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ им. В. И. ВЕРНАДСКОГО"<br>
 
-ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ<br>
+<p align="center">ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ<br>
 
-Кафедра компьютерной инженерии и моделирования</p>
+<p align="center">Кафедра компьютерной инженерии и моделирования</p>
 
 <br>
 
@@ -49,6 +49,7 @@
 
 Подробности указаны далее.
 <h2>Выполнение работы</h2>
+
  <br>1) Был сгенерирован API key на сайте https://openweathermap.org/ - b1c53fb5c5c8568523e672a58733c718<br>
  2) Далее был сделан базовый клиент сервера, который в дальнейшем будет редактироваться.<br>
  
@@ -59,12 +60,12 @@
  4) Написали серверное приложение на языке C++
  
  ```cpp
- #include <iostream>
- #include <Main/include/cpp_httplib/httplib.h>
- #include <Main/include/nlohmann/json.hpp>
- #include <string>
- #include <fstream>
- #include <sstream>
+#include <iostream>
+#include <Main/include/cpp_httplib/httplib.h>
+#include <Main/include/nlohmann/json.hpp>
+#include <string>
+#include <fstream>
+#include <sstream>
 
 using namespace httplib;
 using namespace std;
@@ -108,7 +109,7 @@ void gen_response(const Request& req, Response& res) {
 
     Client cli2("http://api.openweathermap.org");
     // Отправляем get-запрос и ждём ответ, который сохраняется в переменной res
-    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=3d39302576a79c67051688878116f7c4&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
+    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=b1c53fb5c5c8568523e672a58733c718&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
     // res преобразуется в true, если запрос-ответ прошли без ошибок
     if (res2) {
         // Проверяем статус ответа, т.к. может быть 404 и другие
@@ -193,7 +194,7 @@ void gen_response_raw(const Request& req, Response& res) {
 
     Client cli2("http://api.openweathermap.org");
     // Отправляем get-запрос и ждём ответ, который сохраняется в переменной res
-    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=3d39302576a79c67051688878116f7c4&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
+    auto res2 = cli2.Get("/data/2.5/forecast?id=524901&appid=b1c53fb5c5c8568523e672a58733c718&lat=44.952116&lon=34.102411&exclude=current,minutely,daily,alerts&units=metric&lang=ru");
     // res преобразуется в true, если запрос-ответ прошли без ошибок
     if (res2) {
         // Проверяем статус ответа, т.к. может быть 404 и другие
@@ -248,7 +249,7 @@ import requests
 
 def reload_data(event=None):
     try:
-        response = requests.get('https://7556ddbfe5be.ngrok.io/raw').content.decode("utf8")
+        response = requests.get('https://95c9ac0c336e.ngrok.io/raw').content.decode("utf8")
         forecast_j = json.loads(response)
 
         desc.config(text=str(forecast_j["weather"]))
@@ -291,7 +292,7 @@ root.mainloop()
  6) Был сделан графический интерфейс приложения<br>
  
  ![](./images/pic2.png)
- 
  7) А вот и готовый вариант задачи<br>
  
  ![](./images/pic3.png)
+

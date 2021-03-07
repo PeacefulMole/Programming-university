@@ -68,7 +68,7 @@ void gen_response(const Request& req, Response& res) {
 
     for (int i = 0; i < 39;) {
         int time = j2["list"][i]["dt"];
-        if (CurrentTime = time) {
+        if (CurrentTime == time) {
             CurrentWeather = j2["list"][i]["weather"][0]["description"]; cout << CurrentWeather << "\n";
             Picture = j2["list"][i]["weather"][0]["icon"]; cout << Picture << "\n";
             Temp = j2["list"][i]["main"]["temp"]; cout << Temp << "\n";
@@ -82,7 +82,7 @@ void gen_response(const Request& req, Response& res) {
     // Hello, World! - тело ответа
     // text/plain - MIME тип ответа (в данном случае обычный текст)
 
-    string template_file_name = "wether.html";
+    string template_file_name = "/home/edward/Programming/Lab/01/Main/Main/wether.html";
     ifstream file(template_file_name);
     if (!file.is_open()) { cout << "Не удалось открыть файл\n"; }
     else { cout << "Файл открыт!\n"; }
